@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="res" disabled>
+
+        <div>
+            <div class="ccon">
+                <button onclick="append('1')">1</button>
+                <button onclick="append('2')">2</button>
+                <button onclick="append('3')">3</button>
+            </div>
+            <div class="ccon">
+            <button onclick="append('4')">4</button>
+            <button onclick="append('5')">5</button>
+            <button onclick="append('6')">6</button>
+            </div>
+            <div class="ccon">
+            <button onclick="append('7')">7</button>
+            <button onclick="append('8')">8</button>
+            <button onclick="append('9')">9</button>
+            <button onclick="append('0')">0</button>
+            </div>
+            <div class="ccon">
+            <button onclick="append('+')">+</button>
+            <button onclick="append('-')">-</button>
+            <button onclick="append('')"></button>
+            <button onclick="append('/')">/</button>
+            <button onclick="calculate()">=</button>
+            </div>
+            <button onclick="clears()">C</button>
+        </div>
+    </div>
+</body>
+<script>
+    function append(char)
+    {
+        document.getElementById('res').value+=char;
+    }
+
+    function calculate()
+    {
+        let result = eval(document.getElementById('res').value);
+        document.getElementById('res').value = result;
+    }
+
+    function clears()
+    {
+        document.getElementById('res').value = '';
+    }
+</script>
+</html>
